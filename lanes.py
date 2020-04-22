@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import sys
 
 
 def make_coords(image, line_parameters):
@@ -53,7 +54,7 @@ def display_lane(image, lines):
     return line_image
 
 
-cap = cv2.VideoCapture("road_video.mp4")
+cap = cv2.VideoCapture(sys.argv[1])
 while(cap.isOpened()):
     _, frame = cap.read()
     canny_image = canny(frame)
